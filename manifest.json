@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "ContentEditable",
+  "version": "0.1.0",
+  "action": {
+    "default_icon": {
+      "16": "assets/extension-icon.png",
+      "24": "assets/extension-icon.png",
+      "32": "assets/extension-icon.png"
+    },
+    "default_title": "ContentEditable",
+    "default_popup": "popup.html"
+  },
+  "description": "Live web page editing",
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "scripting"
+  ]
+}

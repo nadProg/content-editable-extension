@@ -1,0 +1,119 @@
+body {
+    margin: 0;
+    font-family: "Courier New", monospace;
+}
+
+main {
+    padding: 2rem 4rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.trigger {
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+    min-width: 150px;
+    height: 2.5rem;
+    padding: 0;
+
+    appearance: none;
+    font: inherit;
+    font-size: 18px;
+    font-weight: 700;
+
+    border-radius: 2rem;
+    border: 2px solid;
+
+    color: transparent;
+    cursor: pointer;
+
+    transition-property: color, background-color, border-color;
+    transition-duration: 300ms;
+}
+
+.trigger::before {
+    content: 'Turn On';
+
+}
+
+.trigger::after {
+    content: 'Turn Off';
+
+}
+
+.trigger::before,
+.trigger::after {
+    box-sizing: border-box;
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition-property: color, transform;
+    transition-duration: 300ms;
+}
+
+.trigger--on {
+    background-color: #bbf7d0;
+    border-color: #4ade80;
+}
+
+.trigger--on:hover {
+    background-color: #86efac;
+    border-color: #22c55e;
+}
+
+.trigger--on::before {
+    transform: translateY(0);
+}
+
+.trigger--on::after {
+    transform: translateY(100%);
+}
+
+.trigger--on::before,
+.trigger--on::after {
+    color: #15803d;
+}
+
+.trigger--on::before:hover,
+.trigger--on::after:hover {
+    color: #166534;
+}
+
+.trigger--off {
+    background-color: #e2e8f0;
+    border-color: #94a3b8;
+}
+
+.trigger--off:hover {
+    background-color: #cbd5e1;
+    border-color: #64748b;
+}
+
+.trigger--off::before {
+    transform: translateY(-100%);
+}
+
+.trigger--off::after {
+    transform: translateY(0);
+}
+
+.trigger--off::after,
+.trigger--off::before {
+    color: #475569;
+}
+
+.trigger--off::after:hover,
+.trigger--off::before:hover {
+    color: #334155;
+}
