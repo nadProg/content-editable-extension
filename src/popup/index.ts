@@ -1,4 +1,5 @@
 import {getPageEditableState, switchPageEditable} from './utils';
+import './index.css';
 
 const triggerNode = document.querySelector('.trigger');
 
