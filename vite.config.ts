@@ -1,5 +1,6 @@
 import { resolve } from 'path';
 import { defineConfig } from 'vite';
+import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 export default defineConfig({
   build: {
@@ -10,5 +11,19 @@ export default defineConfig({
         popup: resolve(__dirname, 'popup.html'),
       }
     }
-  }
+  },
+  plugins: [
+    viteStaticCopy({
+      targets: [
+        {
+          src: 'src/assets',
+          dest: '',
+        },
+        {
+          src: 'src/manifest.json',
+          dest: '',
+        },
+      ],
+    }),
+  ],
 });
