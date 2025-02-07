@@ -1,5 +1,7 @@
+import browser from 'webextension-polyfill';
+
 const getActiveTab = async () => {
-  const tabs = await chrome.tabs.query({
+  const tabs = await browser.tabs.query({
     currentWindow: true,
     active: true,
   });
@@ -11,15 +13,20 @@ const getPageEditableStateFunc = () => {
   return document.body.contentEditable === 'true';
 };
 
-export const getPageEditableState = async () => {
+export const getPageEditableState = async (): Promise<boolean | undefined> => {
   const activeTab = await getActiveTab();
-  const [{result}] = await chrome.scripting.executeScript({
+
+  if (!activeTab.id) {
+    return;
+  }
+
+  const [{result}] = await browser.scripting.executeScript({
     target: {
       tabId: activeTab.id,
     },
     func: getPageEditableStateFunc,
   });
-  return result;
+  return !!result;
 };
 
 const switchPageEditableFunc = () => {
@@ -27,9 +34,14 @@ const switchPageEditableFunc = () => {
   document.body.contentEditable = currentContentEditable ? 'inherit' : 'true';
 };
 
-export const switchPageEditable = async () => {
+export const switchPageEditable = async (): Promise<void> => {
   const activeTab = await getActiveTab();
-  await chrome.scripting.executeScript({
+
+  if (!activeTab.id) {
+    return;
+  }
+
+  await browser.scripting.executeScript({
     target: {
       tabId: activeTab.id,
     },
