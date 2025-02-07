@@ -8,8 +8,12 @@
     <title>ContentEditable title</title>
 </head>
 <body>
-<main>
-    <button class="trigger" type="button"></button>
+<main class="main">
+    <h1 class="main__title title">Content Editable</h1>
+    <button class="trigger trigger--off" type="button">
+        <span class="trigger__content trigger__content--enabled">Enabled</span>
+        <span class="trigger__content trigger__content--disabled">Disabled</span>
+    </button>
 </main>
 <script type="module" src="src/popup/index.ts"></script>
 </body>

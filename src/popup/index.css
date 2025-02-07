@@ -1,16 +1,23 @@
-@import "tailwindcss";
-
 body {
     margin: 0;
     font-family: "Courier New", monospace;
+    background: #FAF7F2;
 }
 
-main {
-    padding: 2rem 4rem;
+.title {
+    margin: 0;
+    color: #3A3A3A;
+    font-size: 1.5rem;
+    text-align: center;
+}
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+.main {
+    padding: 1.5rem 2.5rem;
+}
+
+.main__title {
+    margin-bottom: 1rem;
 }
 
 .trigger {
@@ -23,7 +30,7 @@ main {
 
     appearance: none;
     font: inherit;
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: 700;
 
     border-radius: 2rem;
@@ -36,18 +43,7 @@ main {
     transition-duration: 300ms;
 }
 
-.trigger::before {
-    content: 'Turn On';
-
-}
-
-.trigger::after {
-    content: 'Turn Off';
-
-}
-
-.trigger::before,
-.trigger::after {
+.trigger__content {
     box-sizing: border-box;
     position: absolute;
 
@@ -67,55 +63,51 @@ main {
 .trigger--on {
     background-color: #bbf7d0;
     border-color: #4ade80;
-}
 
-.trigger--on:hover {
-    background-color: #86efac;
-    border-color: #22c55e;
-}
+    &:hover {
+        background-color: #86efac;
+        border-color: #22c55e;
+    }
 
-.trigger--on::before {
-    transform: translateY(0);
-}
+    .trigger__content {
+        color: #15803d;
 
-.trigger--on::after {
-    transform: translateY(100%);
-}
+        &:hover {
+            color: #166534;
+        }
+    }
 
-.trigger--on::before,
-.trigger--on::after {
-    color: #15803d;
-}
+    .trigger__content--enabled {
+        transform: translateY(0);
+    }
 
-.trigger--on::before:hover,
-.trigger--on::after:hover {
-    color: #166534;
+    .trigger__content--disabled {
+        transform: translateY(100%);
+    }
 }
 
 .trigger--off {
     background-color: #e2e8f0;
     border-color: #94a3b8;
-}
 
-.trigger--off:hover {
-    background-color: #cbd5e1;
-    border-color: #64748b;
-}
+    &:hover {
+        background-color: #cbd5e1;
+        border-color: #64748b;
+    }
 
-.trigger--off::before {
-    transform: translateY(-100%);
-}
+    .trigger__content {
+        color: #475569;
 
-.trigger--off::after {
-    transform: translateY(0);
-}
+        &:hover {
+            color: #334155;
+        }
+    }
 
-.trigger--off::after,
-.trigger--off::before {
-    color: #475569;
-}
+    .trigger__content--enabled {
+        transform: translateY(-100%);
+    }
 
-.trigger--off::after:hover,
-.trigger--off::before:hover {
-    color: #334155;
+    .trigger__content--disabled {
+        transform: translateY(0);
+    }
 }
