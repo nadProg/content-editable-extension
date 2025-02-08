@@ -6,30 +6,31 @@ const getActiveTab = async () => {
     active: true,
   });
 
-  return tabs[0];
+  return tabs.at(0);
 };
 
-const getPageEditableStateFunc = () => {
+const getIsPageEditableInjection = () => {
   return document.body.contentEditable === 'true';
 };
 
-export const getPageEditableState = async (): Promise<boolean | undefined> => {
+export const getIsPageEditable = async (): Promise<boolean | undefined> => {
   const activeTab = await getActiveTab();
 
-  if (!activeTab.id) {
+  if (!activeTab?.id) {
     return;
   }
 
-  const [{result}] = await browser.scripting.executeScript({
+  const [{ result }] = await browser.scripting.executeScript({
     target: {
       tabId: activeTab.id,
     },
-    func: getPageEditableStateFunc,
+    func: getIsPageEditableInjection,
   });
+
   return !!result;
 };
 
-const switchPageEditableFunc = () => {
+const switchPageEditableInjection = () => {
   const currentContentEditable = document.body.contentEditable === 'true';
   document.body.contentEditable = currentContentEditable ? 'inherit' : 'true';
 };
@@ -37,7 +38,7 @@ const switchPageEditableFunc = () => {
 export const switchPageEditable = async (): Promise<void> => {
   const activeTab = await getActiveTab();
 
-  if (!activeTab.id) {
+  if (!activeTab?.id) {
     return;
   }
 
@@ -45,7 +46,7 @@ export const switchPageEditable = async (): Promise<void> => {
     target: {
       tabId: activeTab.id,
     },
-    func: switchPageEditableFunc,
+    func: switchPageEditableInjection,
   });
 };
 

@@ -1,24 +1,30 @@
 body {
     margin: 0;
     font-family: "Courier New", monospace;
+    color: #3A3A3A;
     background: #FAF7F2;
 
     @media (prefers-color-scheme: dark) {
+        color: #FAF7F2;
         background: #3A3A3A;
     }
 }
 
-.title {
-    margin: 0;
-    color: #3A3A3A;
-    font-size: 1.5rem;
-    text-align: center;
-
-    @media (prefers-color-scheme: dark) {
-        color: #FAF7F2;
-    }
+.hidden {
+    display: none;
 }
 
+.title {
+    margin: 0;
+
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.fallback {
+    text-align: center;
+    line-height: 1.25;
+}
 
 .main {
     padding: 1.5rem 2.5rem;
