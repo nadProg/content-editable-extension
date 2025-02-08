@@ -2,6 +2,10 @@ body {
     margin: 0;
     font-family: "Courier New", monospace;
     background: #FAF7F2;
+
+    @media (prefers-color-scheme: dark) {
+        background: #3A3A3A;
+    }
 }
 
 .title {
@@ -9,6 +13,10 @@ body {
     color: #3A3A3A;
     font-size: 1.5rem;
     text-align: center;
+
+    @media (prefers-color-scheme: dark) {
+        color: #FAF7F2;
+    }
 }
 
 
