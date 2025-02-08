@@ -4,6 +4,11 @@
   "version": "0.1.0",
   "description": "Effortlessly toggle 'contenteditable' attribute on the body tag for manual layout testing. Streamline your evaluation of text overflow with a single click.",
   "homepage_url": "",
+  "developer": {
+    "name": "Eugene Skrobov",
+    "email": "skrobov.ev@gmail.com"
+  },
+  "author": "Eugene Skrobov <skrobov.ev@gmail.com>",
   "action": {
     "default_icon": {
       "16": "assets/extension-icon.png",
