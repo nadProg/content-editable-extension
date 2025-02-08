@@ -1,4 +1,4 @@
-import {getIsPageEditable, switchPageEditable} from './utils';
+import {getIsPageEditable, switchPageEditable} from './browser';
 import './index.css';
 
 const HIDDEN = 'hidden';
