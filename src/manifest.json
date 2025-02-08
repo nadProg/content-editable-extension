@@ -1,10 +1,15 @@
 {
   "manifest_version": 3,
   "name": "Content Editable",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Effortlessly toggle 'contenteditable' attribute on the body tag for manual layout testing. Streamline your evaluation of text overflow with a single click.",
   "homepage_url": "https://github.com/nadProg/content-editable-extension",
   "author": "Eugene Skrobov <skrobov.ev@gmail.com>",
+  "icons": {
+    "16": "assets/extension-icon.png",
+    "48": "assets/extension-icon.png",
+    "128": "assets/extension-icon.png"
+  },
   "action": {
     "default_icon": {
       "16": "assets/extension-icon.png",
