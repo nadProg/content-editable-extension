@@ -3,7 +3,7 @@
   "name": "Content Editable",
   "version": "0.1.0",
   "description": "Effortlessly toggle 'contenteditable' attribute on the body tag for manual layout testing. Streamline your evaluation of text overflow with a single click.",
-  "homepage_url": "",
+  "homepage_url": "https://github.com/nadProg/content-editable-extension",
   "developer": {
     "name": "Eugene Skrobov",
     "email": "skrobov.ev@gmail.com"

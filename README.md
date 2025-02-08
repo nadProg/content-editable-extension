@@ -2,7 +2,7 @@
 
 [![Mozilla Add-on](https://img.shields.io/amo/v/content-editable.svg?style=flat-square)](https://addons.mozilla.org/en-US/firefox/addon/content-editable/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=flat-square)](https://github.com/nadProg/content-editable-extension/blob/main/LICENSE)
-[![GitHub Stars](https://img.shields.io/github/stars/yourusername/content-editable-extension?style=flat-square)](https://github.com/nadProg/content-editable-extension/stargazers)
+[![GitHub Stars](https://img.shields.io/github/stars/nadprog/content-editable-extension?style=flat-square)](https://github.com/nadProg/content-editable-extension/stargazers)
 
 A simple Firefox extension that enables **contentEditable** mode on any webpage with a single click.
 
