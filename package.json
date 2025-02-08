@@ -2,13 +2,18 @@
   "name": "content-editable-extension",
   "description": "Effortlessly toggle 'contenteditable' attribute on the body tag for manual layout testing. Streamline your evaluation of text overflow with a single click.",
   "author": "Eugene Skrobov <skrobov.ev@gmail.com>",
-  "keywords": ["firefox", "browser", "extension", "contenteditable"],
+  "keywords": [
+    "firefox",
+    "browser",
+    "extension",
+    "contenteditable"
+  ],
   "version": "0.1.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build:dist": "vite build",
-    "build:extension": "web-ext build --source-dir dist --overwrite-dest --artifacts-dir web-ext-artifacts",
+    "build:extension": "npx web-ext build --source-dir dist --overwrite-dest --artifacts-dir web-ext-artifacts",
     "build": "npm run build:dist && npm run build:extension"
   },
   "license": "MIT",

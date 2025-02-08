@@ -28,6 +28,10 @@ body {
     margin-bottom: 1rem;
 }
 
+.main__trigger {
+    margin: 0 auto;
+}
+
 .trigger {
     box-sizing: border-box;
     overflow: hidden;
