@@ -26,5 +26,8 @@
   "engines": {
     "node": "22.x.x",
     "npm": "10.x.x"
+  },
+  "dependencies": {
+    "zod": "3.24.2"
   }
 }

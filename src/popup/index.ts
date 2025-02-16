@@ -37,6 +37,7 @@ const updateView = async () => {
 
         setTriggerView();
         setTriggerState({ on: isPageEditable });
+        await chrome.runtime.sendMessage({ type: "setIcon", active: isPageEditable });
     } catch {
         setFallbackView();
     }
