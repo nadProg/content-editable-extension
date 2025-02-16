@@ -6,22 +6,23 @@
   "homepage_url": "https://github.com/nadProg/content-editable-extension",
   "author": "Eugene Skrobov <skrobov.ev@gmail.com>",
   "icons": {
-    "16": "assets/extension-icon.png",
-    "24": "assets/extension-icon.png",
-    "32": "assets/extension-icon.png",
-    "48": "assets/extension-icon.png",
-    "128": "assets/extension-icon.png"
+    "16": "assets/icon.png",
+    "24": "assets/icon.png",
+    "32": "assets/icon.png",
+    "48": "assets/icon.png",
+    "128": "assets/icon.png"
   },
   "action": {
     "default_icon": {
-      "16": "assets/extension-icon.png",
-      "24": "assets/extension-icon.png",
-      "32": "assets/extension-icon.png"
+      "16": "assets/icon.png",
+      "24": "assets/icon.png",
+      "32": "assets/icon.png",
+      "48": "assets/icon.png",
+      "128": "assets/icon.png"
     },
     "default_title": "Content Editable",
     "default_popup": "popup.html"
   },
-  "description": "Live web page editing",
   "permissions": [
     "tabs",
     "activeTab",
