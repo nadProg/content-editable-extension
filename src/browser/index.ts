@@ -18,7 +18,7 @@ export const getIsPageEditable = async (): Promise<boolean | undefined> => {
     return;
   }
 
-  const [{ result }] = await chrome.scripting.executeScript({
+  const [{result}] = await chrome.scripting.executeScript({
     target: {
       tabId: activeTab.id,
     },
@@ -48,5 +48,10 @@ export const switchPageEditable = async (): Promise<void> => {
   });
 };
 
+export const sendRuntimeMessage = <M>(message: M) => {
+  return chrome.runtime.sendMessage(message)
+};
 
-
+export const setExtensionIcon = ({path}: { path: Record<number, string> }) => {
+  return chrome.action.setIcon({path});
+};

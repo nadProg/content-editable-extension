@@ -1,33 +1,22 @@
-import {z} from "zod";
-import {getIsPageEditable} from "../popup/browser";
+import {isSetIconMessage} from "../messages/set-icon-message";
+import {getIsPageEditable, setExtensionIcon as setExtensionIconByPath} from "../browser";
+import {getIconPath} from "./icon";
 
-type SetIconMessage = {
-  type: "setIcon";
-  active: boolean;
+const setExtensionIcon = ({active}: { active: boolean | undefined }) => {
+  return setExtensionIconByPath({path: getIconPath({active: active})})
+};
+
+const onTabActivated = async () => {
+  const active = await getIsPageEditable().catch(() => false);
+  await setExtensionIcon({active});
+};
+
+const onSetIconMessage = async (message: unknown) => {
+  if (isSetIconMessage(message)) {
+    await setExtensionIcon(message);
+  }
 }
 
-const SetIconMessageSchema = z.object({
-  type: z.literal('setIcon'),
-  active: z.boolean()
-});
+chrome.tabs.onActivated.addListener(onTabActivated);
 
-const isSetIconMessage = (message: unknown): message is SetIconMessage => {
-  return SetIconMessageSchema.safeParse(message).success;
-};
-
-const getIconPath = ({active}: { active: boolean }) => active ? 'assets/active-icon.png' : 'assets/icon.png';
-
-const onSetIconMessage = ({active}: { active: boolean }) => {
-  return chrome.action.setIcon({path: getIconPath({active})});
-};
-
-chrome.tabs.onActivated.addListener(async () => {
-  const isActive = await getIsPageEditable();
-  await onSetIconMessage({ active: isActive ?? false });
-});
-
-chrome.runtime.onMessage.addListener(async (message: unknown) => {
-  if (isSetIconMessage(message)) {
-    await onSetIconMessage(message);
-  }
-});
+chrome.runtime.onMessage.addListener(onSetIconMessage);

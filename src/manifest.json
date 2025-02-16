@@ -32,6 +32,10 @@
     "activeTab",
     "scripting"
   ],
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
   "browser_specific_settings": {
     "gecko": {
       "id": "skrobov.ev@gmail.com",
