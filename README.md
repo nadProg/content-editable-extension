@@ -37,6 +37,25 @@ Your privacy is important! This extension does not collect any personal data or 
 Contributions are welcome! Feel free to submit an issue or pull request.
 See the Contribution Guide for more details.
 
+## 🛠️ For Firefox Add-on Reviewers
+
+### Prerequisites
+- Install [Node.js](https://nodejs.org/) (LTS version recommended)
+- Install [web-ext](https://github.com/mozilla/web-ext):
+  ```sh
+  npm install -g web-ext
+  ```
+
+### Build Steps
+- Install dependencies
+  ```sh
+  npm install
+  ```
+- Compile the extension into `web-ext-artifacts` directory
+  ```sh
+  npm run build
+  ```
+
 ## 📜 License
 This project is licensed under the MIT License.
 
