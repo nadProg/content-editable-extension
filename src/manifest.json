@@ -23,6 +23,9 @@
     "default_title": "Content Editable",
     "default_popup": "popup.html"
   },
+  "background": {
+    "service_worker": "background.js"
+  },
   "permissions": [
     "tabs",
     "activeTab",
