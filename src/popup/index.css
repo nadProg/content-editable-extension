@@ -113,6 +113,7 @@ body {
     border-color: #64748b;
   }
 
+  /* stylelint-disable-next-line no-descending-specificity */
   .trigger__content {
     color: #475569;
 
