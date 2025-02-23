@@ -26,15 +26,8 @@
   "background": {
     "page": "background.html"
   },
-  "permissions": [
-    "tabs",
-    "activeTab",
-    "scripting"
-  ],
-  "host_permissions": [
-    "http://*/*",
-    "https://*/*"
-  ],
+  "permissions": ["tabs", "activeTab", "scripting"],
+  "host_permissions": ["http://*/*", "https://*/*"],
   "browser_specific_settings": {
     "gecko": {
       "id": "skrobov.ev@gmail.com",

@@ -12,6 +12,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "format:check": "prettier \"**/*.{html,css,json}\" --check",
+    "format:fix": "prettier \"**/*.{html,css,json}\" --write",
     "build:dist": "vite build",
     "build:extension": "npx web-ext build --source-dir dist --overwrite-dest --artifacts-dir web-ext-artifacts",
     "build": "npm run build:dist && npm run build:extension"
@@ -19,6 +21,7 @@
   "license": "MIT",
   "devDependencies": {
     "@types/chrome": "0.0.304",
+    "prettier": "3.5.2",
     "typescript": "5.7.3",
     "vite": "6.1.0",
     "vite-plugin-static-copy": "2.2.0"

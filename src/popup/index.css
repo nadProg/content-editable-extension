@@ -1,131 +1,131 @@
 body {
-    margin: 0;
-    font-family: "Courier New", monospace;
-    color: #3A3A3A;
-    background: #FAF7F2;
+  margin: 0;
+  font-family: 'Courier New', monospace;
+  color: #3a3a3a;
+  background: #faf7f2;
 
-    @media (prefers-color-scheme: dark) {
-        color: #FAF7F2;
-        background: #3A3A3A;
-    }
+  @media (prefers-color-scheme: dark) {
+    color: #faf7f2;
+    background: #3a3a3a;
+  }
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
 
 .title {
-    margin: 0;
+  margin: 0;
 
-    font-size: 1.5rem;
-    text-align: center;
+  font-size: 1.5rem;
+  text-align: center;
 }
 
 .fallback {
-    text-align: center;
-    line-height: 1.25;
+  text-align: center;
+  line-height: 1.25;
 }
 
 .main {
-    padding: 1.5rem 2.5rem;
+  padding: 1.5rem 2.5rem;
 }
 
 .main__title {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 .main__trigger {
-    margin: 0 auto;
+  margin: 0 auto;
 }
 
 .trigger {
-    box-sizing: border-box;
-    overflow: hidden;
-    position: relative;
-    min-width: 150px;
-    height: 2.5rem;
-    padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+  min-width: 150px;
+  height: 2.5rem;
+  padding: 0;
 
-    appearance: none;
-    font: inherit;
-    font-size: 1.125rem;
-    font-weight: 700;
+  appearance: none;
+  font: inherit;
+  font-size: 1.125rem;
+  font-weight: 700;
 
-    border-radius: 2rem;
-    border: 2px solid;
+  border-radius: 2rem;
+  border: 2px solid;
 
-    color: transparent;
-    cursor: pointer;
+  color: transparent;
+  cursor: pointer;
 
-    transition-property: color, background-color, border-color;
-    transition-duration: 300ms;
+  transition-property: color, background-color, border-color;
+  transition-duration: 300ms;
 }
 
 .trigger__content {
-    box-sizing: border-box;
-    position: absolute;
+  box-sizing: border-box;
+  position: absolute;
 
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    transition-property: color, transform;
-    transition-duration: 300ms;
+  transition-property: color, transform;
+  transition-duration: 300ms;
 }
 
 .trigger--on {
-    background-color: #bbf7d0;
-    border-color: #4ade80;
+  background-color: #bbf7d0;
+  border-color: #4ade80;
+
+  &:hover {
+    background-color: #86efac;
+    border-color: #22c55e;
+  }
+
+  .trigger__content {
+    color: #15803d;
 
     &:hover {
-        background-color: #86efac;
-        border-color: #22c55e;
+      color: #166534;
     }
+  }
 
-    .trigger__content {
-        color: #15803d;
+  .trigger__content--enabled {
+    transform: translateY(0);
+  }
 
-        &:hover {
-            color: #166534;
-        }
-    }
-
-    .trigger__content--enabled {
-        transform: translateY(0);
-    }
-
-    .trigger__content--disabled {
-        transform: translateY(100%);
-    }
+  .trigger__content--disabled {
+    transform: translateY(100%);
+  }
 }
 
 .trigger--off {
-    background-color: #e2e8f0;
-    border-color: #94a3b8;
+  background-color: #e2e8f0;
+  border-color: #94a3b8;
+
+  &:hover {
+    background-color: #cbd5e1;
+    border-color: #64748b;
+  }
+
+  .trigger__content {
+    color: #475569;
 
     &:hover {
-        background-color: #cbd5e1;
-        border-color: #64748b;
+      color: #334155;
     }
+  }
 
-    .trigger__content {
-        color: #475569;
+  .trigger__content--enabled {
+    transform: translateY(-100%);
+  }
 
-        &:hover {
-            color: #334155;
-        }
-    }
-
-    .trigger__content--enabled {
-        transform: translateY(-100%);
-    }
-
-    .trigger__content--disabled {
-        transform: translateY(0);
-    }
+  .trigger__content--disabled {
+    transform: translateY(0);
+  }
 }
