@@ -26,3 +26,5 @@ jobs:
         run: npm run lint-styles
       - name: Check types
         run: npm run check-types
+      - name: Lint code
+        run: npm run lint
