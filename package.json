@@ -12,7 +12,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "format": "prettier \"**/*.{html,css,json}\"",
+    "format": "prettier \"**/*.{html,css,json,yml}\"",
     "format:check": "npm run format -- --check",
     "format:fix": "npm run format -- --write",
     "check-types": "tsc --noEmit",
