@@ -1,5 +1,5 @@
-import {createSetIconMessage} from "../messages/set-icon-message";
-import {getIsPageEditable, sendRuntimeMessage, switchPageEditable} from '../browser';
+import { createSetIconMessage } from '../messages/set-icon-message';
+import { getIsPageEditable, sendRuntimeMessage, switchPageEditable } from '../browser';
 import './index.css';
 
 const HIDDEN = 'hidden';
@@ -30,7 +30,7 @@ const setTriggerView = () => {
   fallbackNode.classList.add(HIDDEN);
 };
 
-const setTriggerState = ({on}: { on: boolean | undefined }) => {
+const setTriggerState = ({ on }: { on: boolean | undefined }) => {
   triggerNode.classList.remove(TRIGGER_ON, TRIGGER_OFF);
   triggerNode.classList.add(on ? TRIGGER_ON : TRIGGER_OFF);
 };
@@ -47,8 +47,8 @@ const updateView = async () => {
     const isPageEditable = await getIsPageEditable();
 
     setTriggerView();
-    setTriggerState({on: isPageEditable});
-    await sendRuntimeMessage(createSetIconMessage({active: isPageEditable}));
+    setTriggerState({ on: isPageEditable });
+    await sendRuntimeMessage(createSetIconMessage({ active: isPageEditable }));
   } catch {
     setFallbackView();
   } finally {
